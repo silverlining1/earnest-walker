@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Earnest Walker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: 700;
+            margin: 0;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+        
+        .error-message {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        
+        .error-description {
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        
+        .error-animation {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .gear {
+            position: absolute;
+            animation: spin 10s linear infinite;
+        }
+        
+        .gear-1 {
+            top: 20px;
+            left: 50px;
+            font-size: 80px;
+            color: var(--primary-color);
+        }
+        
+        .gear-2 {
+            top: 80px;
+            left: 120px;
+            font-size: 60px;
+            color: var(--secondary-color);
+            animation-direction: reverse;
+        }
+        
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-animation">
+            <i class="fas fa-cog gear gear-1"></i>
+            <i class="fas fa-cog gear gear-2"></i>
+        </div>
+        <h1 class="error-code">404</h1>
+        <h2 class="error-message">Page Not Found</h2>
+        <p class="error-description">The page you're looking for doesn't exist or has been moved. Don't worry, even the best developers sometimes hit a 404!</p>
+        <div class="nav-buttons">
+            <a href="index.html" class="btn primary-btn"><i class="fas fa-home"></i> Back to Home</a>
+            <a href="#" onclick="history.back(); return false;" class="btn secondary-btn"><i class="fas fa-arrow-left"></i> Go Back</a>
+        </div>
+    </div>
+
+    <script>
+        // Check for dark mode preference
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>

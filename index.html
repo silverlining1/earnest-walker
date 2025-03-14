@@ -16,6 +16,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        /* Immediate text visibility on first load */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-primary) !important;
+        }
+        
+        p, span, li, label {
+            color: var(--text-secondary) !important;
+        }
+        
+        /* Override for specific sections that need white text */
+        .hero-content h1,
+        .hero-content p,
+        .parallax-section h2,
+        .parallax-section p {
+            color: var(--text-light) !important;
+        }
+        
+        /* Skills section specific overrides */
+        .skills-section .section-header h2 {
+            color: var(--text-primary) !important;
+        }
+        
+        .skills-section .section-header p {
+            color: var(--text-secondary) !important;
+        }
+        
+        /* Experience section specific overrides */
+        .timeline-item h3 {
+            color: var(--text-primary) !important;
+        }
+        
+        .timeline-item p, .timeline-item .date {
+            color: var(--text-secondary) !important;
+        }
+        
+        /* Contact section specific overrides */
+        .contact-section .section-header h2 {
+            color: var(--text-primary) !important;
+        }
+        
+        .contact-section .section-header p {
+            color: var(--text-secondary) !important;
+        }
+        
+        .contact-text h4 {
+            color: var(--text-primary) !important;
+        }
+        
+        .contact-text p, .contact-text a {
+            color: var(--text-secondary) !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Preloader -->

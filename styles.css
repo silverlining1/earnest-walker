@@ -582,11 +582,11 @@ section {
 }
 
 .skills-section .section-header h2 {
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
 }
 
 .skills-section .section-header p {
-    color: var(--text-secondary);
+    color: var(--text-secondary) !important;
 }
 
 .skills-container {
@@ -805,11 +805,11 @@ section {
 }
 
 .contact-section .section-header h2 {
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
 }
 
 .contact-section .section-header p {
-    color: var(--text-secondary);
+    color: var(--text-secondary) !important;
 }
 
 .contact-container {
@@ -853,12 +853,12 @@ section {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 5px;
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
 }
 
 .contact-text p, .contact-text a {
     font-size: 16px;
-    color: var(--text-secondary);
+    color: var(--text-secondary) !important;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -882,7 +882,7 @@ section {
 .form-group label {
     font-size: 14px;
     font-weight: 500;
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
 }
 
 .form-control {
@@ -1319,4 +1319,45 @@ footer {
 .blog-section {
     padding: 100px 0;
     background-color: var(--bg-color);
+}
+
+/* Global text color overrides to ensure visibility */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+}
+
+p, span, li, label {
+    color: var(--text-secondary) !important;
+}
+
+/* Override for specific sections that need white text */
+.hero-content h1,
+.hero-content p,
+.parallax-section h2,
+.parallax-section p {
+    color: var(--text-light) !important;
+}
+
+/* Experience Section - ensure text visibility */
+.experience-section {
+    background-color: var(--background);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+.experience-section .section-header h2 {
+    color: var(--text-primary) !important;
+}
+
+.experience-section .section-header p {
+    color: var(--text-secondary) !important;
+}
+
+.timeline-item h3 {
+    color: var(--text-primary) !important;
+}
+
+.timeline-item p, .timeline-item .date {
+    color: var(--text-secondary) !important;
 }

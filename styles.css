@@ -522,20 +522,22 @@ section {
 }
 
 .tech-badge {
-    background-color: var(--tag-bg);
-    color: var(--tag-text);
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
     display: inline-block;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: var(--card-bg);
+    color: var(--text-secondary);
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
 .tech-badge:hover {
-    transform: translateY(-3px);
     background-color: var(--primary-color);
-    color: white;
+    color: white !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
 }
 
 .social-icons {
@@ -707,19 +709,47 @@ section {
     gap: 10px;
 }
 
+/* Filter button styling with dark mode improvements */
 .filter-btn {
-    padding: 8px 20px;
     background-color: transparent;
-    border: 2px solid var(--dark-color);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
     border-radius: 30px;
+    margin: 0 5px 10px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
     font-weight: 500;
-    transition: var(--transition);
+    color: var(--text-secondary);
 }
 
-.filter-btn.active, .filter-btn:hover {
+.filter-btn:hover {
+    background-color: rgba(99, 102, 241, 0.1);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.filter-btn.active {
     background-color: var(--primary-color);
     color: white;
+    border-color: var(--primary-color);
+}
+
+/* Dark mode specific styling for filter buttons */
+:root[data-theme="dark"] .filter-btn {
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+:root[data-theme="dark"] .filter-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+    color: var(--primary-color) !important;
+}
+
+:root[data-theme="dark"] .filter-btn.active {
+    background-color: var(--primary-color);
+    color: white !important;
     border-color: var(--primary-color);
 }
 
@@ -1129,7 +1159,8 @@ footer {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    justify-content: center;
+    margin-bottom: 40px; /* Increased bottom margin */
 }
 
 .cert-badge {
@@ -1192,6 +1223,15 @@ footer {
 .cert-badge:hover::after {
     opacity: 1;
     visibility: visible;
+}
+
+/* Additional spacing for the tech stack heading */
+.skills-section h4 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary) !important;
 }
 
 /* Enhanced Featured Label */

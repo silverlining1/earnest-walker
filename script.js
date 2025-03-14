@@ -374,7 +374,68 @@ document.addEventListener('DOMContentLoaded', function() {
         // Initialize with first page
         showPostsForPage(1);
     }
+    
+    // Add this function to ensure text visibility on page load
+    applyTextColors();
+    
+    // Apply again after a short delay to handle any race conditions
+    setTimeout(applyTextColors, 100);
+    setTimeout(applyTextColors, 500);
+    setTimeout(applyTextColors, 1000);
 });
+
+function applyTextColors() {
+    // Skills section
+    document.querySelectorAll('.skills-section .section-header h2').forEach(el => {
+        el.style.color = 'var(--text-primary)';
+    });
+    
+    document.querySelectorAll('.skills-section .section-header p').forEach(el => {
+        el.style.color = 'var(--text-secondary)';
+    });
+    
+    document.querySelectorAll('.skill-card h3').forEach(el => {
+        el.style.color = 'var(--text-primary)';
+    });
+    
+    document.querySelectorAll('.skill-card p').forEach(el => {
+        el.style.color = 'var(--text-secondary)';
+    });
+    
+    document.querySelectorAll('.skill-icon').forEach(el => {
+        el.style.color = 'var(--primary-color)';
+    });
+    
+    document.querySelectorAll('.progress-text').forEach(el => {
+        el.style.color = 'var(--text-primary)';
+    });
+    
+    // Experience section
+    document.querySelectorAll('.timeline-item h3').forEach(el => {
+        el.style.color = 'var(--text-primary)';
+    });
+    
+    document.querySelectorAll('.timeline-item p, .timeline-item .date').forEach(el => {
+        el.style.color = 'var(--text-secondary)';
+    });
+    
+    // Contact section
+    document.querySelectorAll('.contact-section .section-header h2').forEach(el => {
+        el.style.color = 'var(--text-primary)';
+    });
+    
+    document.querySelectorAll('.contact-section .section-header p').forEach(el => {
+        el.style.color = 'var(--text-secondary)';
+    });
+    
+    document.querySelectorAll('.contact-text h4').forEach(el => {
+        el.style.color = 'var(--text-primary)';
+    });
+    
+    document.querySelectorAll('.contact-text p, .contact-text a').forEach(el => {
+        el.style.color = 'var(--text-secondary)';
+    });
+}
 
 // Parallax Effect
 window.addEventListener('scroll', function() {

@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (savedTheme === 'dark-mode') {
         body.classList.add('dark-mode');
         themeToggle.checked = true;
-    } else if (savedTheme === 'light-mode') {
+    } else {
+        // Default to light mode if no theme is saved or it's set to light-mode
         body.classList.add('light-mode');
         themeToggle.checked = false;
     }

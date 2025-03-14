@@ -24,6 +24,7 @@
             margin: 0;
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1;
         }
@@ -77,6 +78,71 @@
             flex-wrap: wrap;
             justify-content: center;
         }
+        
+        /* Footer Styles */
+        .footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 60px 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+        
+        .footer-description {
+            margin-bottom: 20px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .footer-social a {
+            color: #fff;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-social a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #fff;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-bottom {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -93,6 +159,43 @@
             <a href="#" onclick="history.back(); return false;" class="btn secondary-btn"><i class="fas fa-arrow-left"></i> Go Back</a>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Earnest Walker</h3>
+                    <p class="footer-description">IT professional and tech enthusiast with a passion for helping others understand and leverage technology.</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/silverlining1" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/earnest-walker/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#skills">Skills</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog Posts</a></li>
+                        <li><a href="https://github.com/silverlining1" target="_blank">GitHub Repository</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Earnest Walker. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Check for dark mode preference

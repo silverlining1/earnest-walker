@@ -1194,6 +1194,36 @@ footer {
     visibility: visible;
 }
 
+/* Enhanced Featured Label */
+.featured-label {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 4px 10px !important;
+    border-radius: 20px !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    z-index: 10 !important;
+    box-shadow: 0 3px 8px rgba(99, 102, 241, 0.3) !important;
+}
+
+/* Light mode specific enhancements */
+:root[data-theme="light"] .featured-label {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    box-shadow: 0 3px 8px rgba(99, 102, 241, 0.5) !important;
+}
+
+/* Add more space for the featured title to prevent overlap */
+.featured-title {
+    margin-top: 35px !important;
+    padding-right: 15px !important;
+}
+
 /* Enhanced Animations */
 .reveal {
     opacity: 0;

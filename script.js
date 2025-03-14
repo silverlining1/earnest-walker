@@ -79,12 +79,24 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Preloader
     const preloader = document.querySelector('.preloader');
-    window.addEventListener('load', function() {
-        preloader.classList.add('preloader-finish');
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 1000);
-    });
+    if (preloader) {
+        // Try both DOMContentLoaded and load events to ensure preloader is removed
+        const hidePreloader = function() {
+            preloader.classList.add('preloader-finish');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 1000);
+        };
+        
+        // If page is already loaded, hide preloader immediately
+        if (document.readyState === 'complete') {
+            hidePreloader();
+        } else {
+            window.addEventListener('load', hidePreloader);
+            // Fallback - hide preloader after 3 seconds regardless
+            setTimeout(hidePreloader, 3000);
+        }
+    }
     
     // Particles.js initialization
     if (document.getElementById('particles-js')) {

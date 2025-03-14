@@ -3,165 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Earnest Walker's tech blog featuring insights on cloud technologies, web development, and IT support">
-    <meta name="keywords" content="Earnest Walker, tech blog, Google Cloud, web development, IT support, Java, Python, Chrome OS">
-    <meta name="author" content="Earnest Walker">
-    <title>Blog | Earnest Walker</title>
+    <title>Earnest Walker - Blog</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Blog specific styles */
         .blog-container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
         }
         
         .blog-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
         
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .blog-card {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background-color: var(--card-bg);
-        }
-        
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .blog-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .blog-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .blog-card:hover .blog-image img {
-            transform: scale(1.05);
-        }
-        
-        .blog-content {
-            padding: 20px;
-        }
-        
-        .blog-date {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-            display: block;
-        }
-        
-        .blog-title {
-            font-size: 20px;
-            font-weight: 600;
+        .blog-header h1 {
+            font-size: 36px;
+            font-weight: 700;
             margin-bottom: 10px;
             color: var(--text-primary);
         }
         
-        .blog-excerpt {
-            font-size: 15px;
+        .blog-header p {
+            font-size: 18px;
             color: var(--text-secondary);
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        
-        .blog-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
-        
-        .blog-tag {
-            font-size: 12px;
-            padding: 4px 10px;
-            border-radius: 20px;
-            background-color: var(--tag-bg);
-            color: var(--tag-text);
-        }
-        
-        .blog-link {
-            display: inline-block;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .blog-link:hover {
-            color: var(--secondary-color);
-        }
-        
-        .blog-link i {
-            margin-left: 5px;
-            transition: transform 0.3s ease;
-        }
-        
-        .blog-link:hover i {
-            transform: translateX(3px);
-        }
-        
-        .blog-pagination {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 40px;
-        }
-        
-        .page-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: var(--card-bg);
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .page-link.active, .page-link:hover {
-            background-color: var(--primary-color);
-            color: white;
+            max-width: 700px;
+            margin: 0 auto;
         }
         
         .blog-featured {
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
         
         .featured-post {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: var(--card-bg);
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            background-color: var(--card-bg);
         }
         
         .featured-image {
-            height: 100%;
-            min-height: 300px;
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
         }
         
         .featured-image img {
@@ -171,83 +60,227 @@
         }
         
         .featured-content {
-            padding: 30px;
+            flex: 1;
+            min-width: 300px;
+            padding: 40px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
         
-        .featured-label {
+        .featured-tag {
             display: inline-block;
+            background-color: rgba(99, 102, 241, 0.1);
+            color: var(--primary-color);
             padding: 5px 10px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 5px;
+            border-radius: 20px;
             font-size: 12px;
-            font-weight: 600;
             margin-bottom: 15px;
         }
         
         .featured-title {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
             margin-bottom: 15px;
             color: var(--text-primary);
         }
         
         .featured-excerpt {
-            font-size: 16px;
             color: var(--text-secondary);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             line-height: 1.6;
         }
         
+        .featured-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .featured-date {
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .featured-date i {
+            margin-right: 5px;
+            color: var(--primary-color);
+        }
+        
+        .blog-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-link:hover {
+            color: var(--primary-dark);
+        }
+        
+        .blog-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .blog-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-card:hover .blog-card-image img {
+            transform: scale(1.1);
+        }
+        
+        .blog-card-content {
+            padding: 25px;
+        }
+        
+        .blog-card-tag {
+            display: inline-block;
+            background-color: rgba(99, 102, 241, 0.1);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .blog-card-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        
+        .blog-card-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .blog-card-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .blog-card-date {
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .blog-card-date i {
+            margin-right: 5px;
+            color: var(--primary-color);
+        }
+        
+        .blog-pagination {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        
+        .page-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .page-link.active, .page-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
         .blog-external-link {
-            display: block;
             text-align: center;
-            margin: 40px 0;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+        }
+        
+        .blog-external-link p {
+            color: var(--text-secondary);
         }
         
         .blog-external-link a {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 25px;
-            background-color: var(--primary-color);
-            color: white;
+            color: var(--primary-color);
             text-decoration: none;
-            border-radius: 30px;
             font-weight: 500;
-            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         
         .blog-external-link a:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
+            text-decoration: underline;
         }
         
         @media (max-width: 768px) {
             .featured-post {
-                grid-template-columns: 1fr;
+                flex-direction: column;
             }
             
             .featured-image {
-                min-height: 200px;
+                height: 250px;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-        </div>
-    </div>
-
-    <!-- Navbar -->
+    <!-- Header -->
     <nav class="navbar">
         <div class="logo">EW</div>
         <div class="theme-switch">
@@ -259,7 +292,7 @@
             <i class="fas fa-moon"></i>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#home">Home</a></li>
             <li><a href="index.html#about">About</a></li>
             <li><a href="index.html#skills">Skills</a></li>
             <li><a href="index.html#portfolio">Portfolio</a></li>
@@ -274,163 +307,109 @@
     </nav>
 
     <main>
-        <section class="blog-section">
-            <div class="blog-container">
-                <div class="blog-header">
-                    <h1>TechTalk Blog</h1>
-                    <div class="underline"></div>
-                    <p>Insights, tutorials, and thoughts on technology, cloud computing, and web development</p>
-                </div>
-                
-                <div class="blog-featured reveal">
-                    <div class="featured-post">
-                        <div class="featured-image">
-                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Java Programming">
-                        </div>
-                        <div class="featured-content">
-                            <span class="featured-label">Featured</span>
-                            <h2 class="featured-title">Diving Into Java & OOP: A Tech Dad's Guide</h2>
-                            <span class="blog-date">March 6, 2025</span>
-                            <p class="featured-excerpt">Hey there! Earnest Walker here from Atlanta. When I'm not mentoring students, developing software, or flying drones, I like to share what I'm learning on my journey. Today, let's chat about Java and Object-Oriented Programming.</p>
-                            <div class="blog-tags">
-                                <span class="blog-tag">Java</span>
-                                <span class="blog-tag">OOP</span>
-                                <span class="blog-tag">Programming</span>
-                            </div>
-                            <a href="https://technotutor101.blogspot.com/2025/03/diving-into-java-oop-tech-dads-guide.html" target="_blank" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
+        <div class="blog-container">
+            <div class="blog-header">
+                <h1>TechTalk</h1>
+                <p>Insights, tutorials, and thoughts on technology, cloud computing, and web development</p>
+            </div>
+            
+            <div class="blog-featured">
+                <div class="featured-post">
+                    <div class="featured-image">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Software Applications">
                     </div>
-                </div>
-                
-                <div class="blog-grid reveal">
-                    <div class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Web Development">
+                    <div class="featured-content">
+                        <span class="featured-tag">Productivity</span>
+                        <h2 class="featured-title">The Power of Software Applications: A Day in Digital Productivity</h2>
+                        <p class="featured-excerpt">In today's digitally transformed workplace, proficiency with various software applications is crucial for success. Through documenting a typical workday, I gained valuable insights into how different types of software applications complement each other and enhance productivity.</p>
+                        <div class="featured-meta">
+                            <span class="featured-date"><i class="far fa-calendar-alt"></i> October 30, 2024</span>
                         </div>
-                        <div class="blog-content">
-                            <span class="blog-date">March 15, 2023</span>
-                            <h3 class="blog-title">Modern JavaScript Frameworks: A Comparison</h3>
-                            <p class="blog-excerpt">Explore the differences between React, Vue, and Angular to determine which framework is best for your next project.</p>
-                            <div class="blog-tags">
-                                <span class="blog-tag">JavaScript</span>
-                                <span class="blog-tag">Web Development</span>
-                            </div>
-                            <a href="https://technotutor101.blogspot.com" target="_blank" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <a href="blog-post.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cloud Computing">
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-date">February 28, 2023</span>
-                            <h3 class="blog-title">Getting Started with Google Cloud Platform</h3>
-                            <p class="blog-excerpt">A beginner's guide to setting up your first project on GCP and understanding the core services available.</p>
-                            <div class="blog-tags">
-                                <span class="blog-tag">Cloud</span>
-                                <span class="blog-tag">GCP</span>
-                            </div>
-                            <a href="https://technotutor101.blogspot.com" target="_blank" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="IT Support">
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-date">January 15, 2023</span>
-                            <h3 class="blog-title">Essential IT Support Skills for 2023</h3>
-                            <p class="blog-excerpt">Discover the most in-demand IT support skills that will make you stand out in the job market this year.</p>
-                            <div class="blog-tags">
-                                <span class="blog-tag">IT Support</span>
-                                <span class="blog-tag">Career</span>
-                            </div>
-                            <a href="https://technotutor101.blogspot.com" target="_blank" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Python Programming">
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-date">December 10, 2022</span>
-                            <h3 class="blog-title">Python for Data Analysis: Essential Libraries</h3>
-                            <p class="blog-excerpt">An overview of the most powerful Python libraries for data analysis, including Pandas, NumPy, and Matplotlib.</p>
-                            <div class="blog-tags">
-                                <span class="blog-tag">Python</span>
-                                <span class="blog-tag">Data Analysis</span>
-                            </div>
-                            <a href="https://technotutor101.blogspot.com" target="_blank" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Web Security">
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-date">November 5, 2022</span>
-                            <h3 class="blog-title">Web Security Best Practices for Developers</h3>
-                            <p class="blog-excerpt">Learn how to protect your web applications from common security threats and vulnerabilities.</p>
-                            <div class="blog-tags">
-                                <span class="blog-tag">Security</span>
-                                <span class="blog-tag">Web Development</span>
-                            </div>
-                            <a href="https://technotutor101.blogspot.com" target="_blank" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Productivity Tools">
-                        </div>
-                        <div class="blog-content">
-                            <span class="blog-date">October 20, 2022</span>
-                            <h3 class="blog-title">10 Productivity Tools Every Developer Should Use</h3>
-                            <p class="blog-excerpt">Discover the tools that can help streamline your workflow and boost your productivity as a developer.</p>
-                            <div class="blog-tags">
-                                <span class="blog-tag">Productivity</span>
-                                <span class="blog-tag">Tools</span>
-                            </div>
-                            <a href="https://technotutor101.blogspot.com" target="_blank" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="blog-pagination">
-                    <a href="#" class="page-link active">1</a>
-                    <a href="#" class="page-link">2</a>
-                    <a href="#" class="page-link">3</a>
-                    <a href="#" class="page-link"><i class="fas fa-ellipsis-h"></i></a>
-                    <a href="#" class="page-link"><i class="fas fa-angle-right"></i></a>
-                </div>
-                
-                <div class="blog-external-link">
-                    <a href="https://technotutor101.blogspot.com" target="_blank" class="btn primary-btn">Visit My Full Blog <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
-        </section>
+            
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Software Applications">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Software</span>
+                        <h3 class="blog-card-title">The Power of Software Applications: Transforming Our Digital Experience</h3>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date"><i class="far fa-calendar-alt"></i> December 15, 2024</span>
+                        </div>
+                        <p class="blog-card-excerpt">Software applications have revolutionized the way we interact with technology. From productivity tools to entertainment platforms, these digital solutions enhance our capabilities and streamline our daily tasks.</p>
+                        <a href="blog-post.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Network Data">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Networking</span>
+                        <h3 class="blog-card-title">Traveling Through the Network: Understanding Internet Connectivity</h3>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date"><i class="far fa-calendar-alt"></i> November 15, 2024</span>
+                        </div>
+                        <p class="blog-card-excerpt">Ever wonder how information travels across the internet? This post explores the journey of data packets from source to destination, explaining the protocols and infrastructure that make our digital communications possible.</p>
+                        <a href="blog-post-networking.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tech Education">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Education</span>
+                        <h3 class="blog-card-title">The Future of Computing in Education: A Decade of Digital Transformation</h3>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date"><i class="far fa-calendar-alt"></i> September 30, 2024</span>
+                        </div>
+                        <p class="blog-card-excerpt">As technology continues to evolve at a rapid pace, ensuring equal access to tech education becomes increasingly important. This post examines current initiatives and proposes solutions for creating more inclusive learning opportunities.</p>
+                        <a href="blog-post-education.html" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog-pagination">
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link"><i class="fas fa-ellipsis-h"></i></a>
+                <a href="#" class="page-link"><i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">EW</div>
-                <p>&copy; 2025 Earnest Walker. All Rights Reserved.</p>
-                <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/mrsilverlining" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <div class="footer-logo">
+                    <h3>Earnest Walker</h3>
+                    <p>Software Developer | Google IT Support Professional</p>
                 </div>
+                <div class="footer-social">
+                    <a href="https://github.com/silverlining1" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/earnest-walker/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Earnest Walker. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top-btn">
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
-    </button>
+    </a>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
